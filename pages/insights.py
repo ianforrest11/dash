@@ -16,10 +16,10 @@ column1 = dbc.Col(
             Let's take a look at an individual prediction for LeBron James.
 
             The top graph is a comparison of LeBron's actual 2018-19 salary against
-            his salaries predicted by the models.  The XGBoost prediction
+            the salaries predicted by the models.  The XGBoost prediction
             is slightly closer, but both have a mean average error of around $3 million dollars.
 
-            The bottom graph is a Shap plot breakdown of LeBron's XGBoost-predicted salary.
+            The bottom graph is a Shap plot breakdown of LeBron's XGBoost-predicted salary (orange bar above).
             The average salary calculated by the model is increased or decreased by a player's 
             individual components. In LeBron's case, his Age, PPG, and MPG had the biggest 
             impacts on his predicted salary.

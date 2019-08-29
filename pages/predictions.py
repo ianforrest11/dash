@@ -16,7 +16,7 @@ layout = html.Div([
     dcc.Markdown("""
         ### Predict
         Use the player components below to generate a predicted 2018-2019 NBA Salary.  Please note that simulating unrealistic
-        scenarios, such as a 7'6" point guard with 100%  3-point accuracy, may skew the results of the prediction.
+        scenarios, such as a 7'6" point guard with 100% 3-point accuracy, may skew the results of the prediction.
     
     """), 
 
