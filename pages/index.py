@@ -29,28 +29,44 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Value Proposition
+            ## Components of NBA Salaries
+            
+            NBA Basketball Players are well compensated compared to the general population. 
+            During the 2018-19 season, they earned an average salary of $7,080,000.  
+            However, this number is somewhat misleading.
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            Some clarity is provided by the Standard Deviation, which is around $8 million dollars 
+            away from the mean.  In other words, there are substantial differences
+            between the salaries going into that $7,080,000 number.
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            But what exactly determines an NBA Player's salary? Well-known players like 
+            LeBron James are extremely talented and thus earn a lot of money.  Likewise, 
+            less-talented/well-known players earn substantially less money.  Unfortunately
+            such statements are generalities.
+            
+            What if there was a way to identify specific components that make up a player's salary?
+            Instead of saying 'LeBron James has a high salary because he's good,' wouldn't it be nice 
+            to identify the specific characteristics that make up that salary?  Is his high salary more
+            attributed to his points per game average or his status as a Most Valuable Player?
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            This study attempts to analyze the impact of various player components on NBA salaries
+            for the 2018-2019 NBA season.  
 
             """
         ),
-        dcc.Link(dbc.Button('Call To Action', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
-
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
+
+        html.Img(src='assets/PPGPDP.png', className='img-fluid'),
+
+        html.Div([
+            html.P('The above image displays a partial dependence plot of points per game (PPG) as a predictor of NBA player salary for the 2018-19 season.  Each blue line represents a group of players with similar PPG statistics, while the dark green line represents the average for the league as a whole. The graph indicates that points per game is a mixed component for determining salary.  For players with high PPG averages, it is a good predictor.  For players with low PPG averages, it is a poor/negative predictor.'),
+        ],style={'fontSize': 10})
+
     ]
 )
 
