@@ -6,19 +6,6 @@ from dash.dependencies import Input, Output
 
 from app import app
 
-row = html.Div(
-    [
-        dbc.Row(dbc.Col(html.Div("A single column"))),
-        dbc.Row(
-            [
-                dbc.Col(html.Div("One of three columns")),
-                dbc.Col(html.Div("One of three columns")),
-                dbc.Col(html.Div("One of three columns")),
-            ]
-        ),
-    ]
-)
-
 column1 = dbc.Col(
     [
 
@@ -50,9 +37,10 @@ column3 = dbc.Col(
        linear regression model.  The images above display the permutation importances for
        both.  
        
-       Green features are valuable components for predicting NBA Salaries, while yellow
-       and red features are neutral/negative predictors.  The darker a feature's shade,
-       the more important it is in coming up with a prediction
+       Without getting too technical, permutation importances measure the impact of a given feature on a model's overall projection.
+       Green features are valuable components for predicting NBA Salaries, while yellow and red
+       features are neutral/negative predictors.  The darker a feature's shade, the more important
+       it is in coming up with a prediction.
 
        Similar predictions were made.  Age, minutes per game (MPG), and points per game
        (PPG) were identified as important predictive components of both models.
@@ -60,6 +48,12 @@ column3 = dbc.Col(
        There are key variances, however.  The linear regression model indicates current
        all-star status as the most important indicator of salary, while the XGBoost
        regression model identifies it as somewhat neutral.
+
+       Interestingly enough, features created as a part of the study, such as 'c_allstar?', are 
+       just as important to the models' predictions as  actual statistical features, such as points 
+       per game.
+        
+
 
     
     """)

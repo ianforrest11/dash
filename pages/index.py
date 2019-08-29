@@ -32,11 +32,11 @@ column1 = dbc.Col(
             ## Components of NBA Salaries
             
             NBA Basketball Players are well compensated compared to the general population. 
-            During the 2018-19 season, they earned an average salary of $7,080,000.  
-            However, this number is somewhat misleading.
+            During the 2018-19 season, a given player earned an average salary of $7,080,000.  However, this
+            number is somewhat misleading when determining what a real player's salary should be.
 
-            Some clarity is provided by the Standard Deviation, which is around $8 million dollars 
-            away from the mean.  In other words, there are substantial differences
+            Some clarity is provided by the Standard Deviation of these salaries, which 
+            around $8 million dollars away from the mean.  In other words, there are substantial differences
             between the salaries going into that $7,080,000 number.
 
             But what exactly determines an NBA Player's salary? Well-known players like 
@@ -44,13 +44,7 @@ column1 = dbc.Col(
             less-talented/well-known players earn substantially less money.  Unfortunately
             such statements are generalities.
             
-            What if there was a way to identify specific components that make up a player's salary?
-            Instead of saying 'LeBron James has a high salary because he's good,' wouldn't it be nice 
-            to identify the specific characteristics that make up that salary?  Is his high salary more
-            attributed to his points per game average or his status as a Most Valuable Player?
 
-            This study attempts to analyze the impact of various player components on NBA salaries
-            for the 2018-2019 NBA season.  
 
             """
         ),
@@ -70,4 +64,25 @@ column2 = dbc.Col(
     ]
 )
 
-layout = dbc.Row([column1, column2])
+column3 = dbc.Col(
+    [
+        dcc.Markdown(
+            """
+
+            Instead of saying 'LeBron James has a high salary because he's a great player,' wouldn't it be nice 
+            to identify the specific characteristics that make up his salary?  Is his high salary more
+            attributed to his points per game average or his status as a Most Valuable Player?
+
+            This study attempts to analyze the impact of various player components on NBA salaries
+            for the 2018-2019 NBA season.  As historical data is not taken into account, these predictions
+            should be approached as a baseline.
+
+            """
+        )]
+)
+
+
+layout = [
+            dbc.Row([column1, column2]),
+            dbc.Row([column3])
+]

@@ -15,8 +15,8 @@ style = {'padding': '0.5em'}
 layout = html.Div([
     dcc.Markdown("""
         ### Predict
-        Use the controls below to generate a predicted 2018-2019 NBA Salary based on player components.  Please note that unrealistic
-        scenarios, such as selecting all five positions, may skew the results of the prediction.
+        Use the player components below to generate a predicted 2018-2019 NBA Salary.  Please note that unrealistic
+        scenarios, such as simulating a 7'6" point guard with 100%  3-point accuracy, may skew the results of the prediction.
     
     """), 
 
